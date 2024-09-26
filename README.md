@@ -2,10 +2,6 @@
 
 A small platform game written in C. Inspired by Prehistorik on DOS developed by Titus™.
 
-## Description
-
-A small platformer like videogame.
-
 ## Installation
 
 Requirements :
