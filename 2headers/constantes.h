@@ -47,13 +47,13 @@
 /**
   * \brief Valeur déterminant la hauteur de la fenêtre (par Défaut à 720).
   */
-#define HEIGHT 480
+#define HEIGHT 720
 
 //---------------------------------------------------------//
 /**
   * \brief Valeur déterminant la largeur de la fenêtre (par Défaut à 1280).
   */
-#define WIDTH 854
+#define WIDTH 1280
 
 //---------------------------------------------------------//
 /**
