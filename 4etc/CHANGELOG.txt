@@ -1,0 +1,254 @@
+Ceci est le début du projet prehistoric.
+
+Les ajouts, retraits et modifications seront répertoriés ici.
+
+//-----------EARLY-STATE : FILE CREATION-----------//
+
+[ADDITION] - 28/09/2021 : CHANGELOG.txt et README.md Ajoutés.
+
+
+[ADDITION] - 30/09/2021 : MAKEFILE Créé.
+[ADDITION] - 30/09/2021 : main.c Ajouté.
+[ADDITION] - 30/09/2021 : main compilation par Makefile Ajoutée.
+
+[INFO] - Le Projet peut être compilé !
+
+[ADDITION] - 30/09/2021 : gestionDonnees.c, gestionEvenements.c, gestionAffichage.c Ajoutés.
+
+[ADDITION] - 12/10/2021 : Ajout d'une fonction mainLoop dans main.c afin de prendre en charge la boucle du jeu.
+
+[INFO] - Le Projet n'est plus compilable !
+
+[ADDITION] - 12/10/2021 : Ajout d'un fichier constantes.h.
+[ADDITION] - 12/10/2021 : Ajout des en-têtes de documentation des constantes et fonction du main.c et constantes.h.
+[ADDITION] - 12/10/2021 : Ajout de la constante DEBUG_MODE.
+
+[BUG] - Si la constante est modifiée entre deux compilations, le Makefile ne constatera pas de différence et ne compilera pas. Il faut, pour l'instant, nettoyer tous les fichiers compilés et re-compiler le programme.
+
+[INFO] - Le Projet peut être compilé !
+
+[ADDITION] - 12/10/2021 : Ajout d'une option doc dans Makefile afin de génèrer une documentation doxygen au format HTML et au format Latex.
+
+[ADDITION] - 19/10/2021 : Modification du MAKEFILE (Ajout de la commande make prehistoric) afin de créer le programme executable.
+[ADDITION] - 19/10/2021 : Ajout d'un fichier structure.c.
+[ADDITION] - 19/10/2021 : Ajout d'un fichier structure.h.
+[ADDITION] - 19/10/2021 : Création du type world_t.
+[ADDITION] - 19/10/2021 : Getter et modifier de world.gameover ajoutés.
+[ADDITION] - 19/10/2021 : Ajout d'un malloc et free pour la structure world Principale.
+[ADDITION] - 19/10/2021 : Modification du mainloop() pour prendre en charge la nouvelle structure de données world_s.
+[ADDITION] - 19/10/2021 : Ajout d'une constante booléenne GOD_MODE permettant de rendre le joueur immunisé à tout type de dégâts.
+
+[ADDITION] - 20/10/2021 : Ajout d'un fichier gestionDonnees.h.
+[ADDITION] - 20/10/2021 : Ajout de la fonction initWorld(world_t * world) dans gestionDonnees.c.
+
+[INFO] - Le Projet n'est plus compilable !
+
+[ADDITION] - 25/10/2021 : Ajout de CMakeLists et ajout des dépendances du projet.
+
+[BUG] - Bug de compilation lors du changement d'une constante corrigé !
+
+[INFO] - Le Projet peut à nouveau être compilé !
+
+[ADDITION] - 25/10/2021 : Modification du nom de structure.c/.h en struct_world.c/.h .
+[ADDITION] - 25/10/2021 : Ajout d'une Structure de donnée sprite_t.
+[ADDITION] - 25/10/2021 : Correction des documentations.
+
+[INFO] - Le Projet n'est plus compilable !
+
+[ADDITION] - 03/11/2021 : Ajout des sur-couches de la bibliothèque SDL avec les fichiers sdl2-light.h/.c et sdl2-ttf-light.h/.c .
+[ADDITION] - 03/11/2021 : Ajout de init(), clean() dans main.c .
+[ADDITION] - 03/11/2021 : Complétion des fonctions getters/setters de sprite_t.
+[ADDITION] - 03/11/2021 : Modification du readme.
+
+[ADDITION] - 04/11/2021 : Ajout de fichier gestionEvenements.h .
+[ADDITION] - 04/11/2021 : Ajout de fichier gestionAffichage.h .
+[ADDITION] - 04/11/2021 : Modification du main pour prendre en charge SDL2.
+
+[BUG] - lors de la compilation, les constantes sont définies plusieurs fois. Essayer de créer une structure permettant de stocker ces valeurs lors de l'initialisation.
+
+[ADDITION] - 08/11/2021 : Redéfinition du fichier constantes.h (les "const" ont étés remplacés par des "#define" afin de résoudre les bugs de compilation).
+
+[BUG] - Bug de compilation avec les constantes résolu.
+
+[ADDITION] - 08/11/2021 : Modification du main.
+[ADDITION] - 08/11/2021 : Ajout de la fonction initGraphique() dans gestionAffichage.c/.h .
+
+[INFO] - Le Projet peut à nouveau être compilé !
+
+//-----------MIDDLE-STATE : FEATURE ADDITION-----------//
+
+[ADDITION] - 08/11/2021 : Ajout des fichiers contenant les sprites.
+
+[ADDITION] - 11/11/2021 : Modif des documentations.
+[ADDITION] - 11/11/2021 : Modification des champs sprite_t et world_t en sprite_p et world_p CE SONT MAINTENANT DES POINTEURS RESPECTIVEMENT VERS sprite_t et world_t
+[ADDITION] - 11/11/2021 : Ajout des fonctions cleanSprite, cleanWorld, initSprite, getHP,
+[ADDITION] - 11/11/2021 : Modification des fonctions cleanWorld en cleanWorldData et initWorld en initWorldData dans (dans gestionDonnees.c/.h).
+
+[BUG] - Le champ world->gameover reprend la valeur true sans raison apparente. Empêchant l'entrée dans la boucle while de mainloop.
+
+[ADDITION] - 11/11/2021 : Ajout d'une cible Doxygen au cmake afin de générer une documentation.
+[ADDITION] - 11/11/2021 : Ajout d'une cible Doxygen au makefile réussie (voir fichier README pour plus d'infos).
+
+[ADDITION] - 16/11/2021 : Ajout de la fonction cleanWorldData(world_p world).
+[ADDITION] - 16/11/2021 : Ajout de la fonction initSpritePlayer.
+[ADDITION] - 16/11/2021 : modif initWorldData.
+
+[ADDITION] - 17/11/2021 : Retrait de l'ajout de <stdbool.h> dans tous les fichiers concernés. Retrait de toutes les déclarations de champs booléens.
+[ADDITION] - 17/11/2021 : Ajout de constantes true/false dans constantes.h.
+[ADDITION] - 17/11/2021 : Modification de l'initialisation de world (suppression de initWorld().
+
+[BUG] - Le bug d'initialisation des champs a été corrigé.
+
+[ADDITION] - 17/11/2021 : Ajout d'une architecture de Tests.
+[ADDITION] - 17/11/2021 : Modification de l'organisation du projet.
+
+[ADDITION] - 25/11/2021 : Ajout de documentation supplémentaire dans sdl2-light.c/.h .
+[ADDITION] - 25/11/2021 : Ajout d'une fonction loadTextures() dans gestionAffichage.c/.h .
+[ADDITION] - 25/11/2021 : Ajout d'une structure ressources_t.
+
+[INFO] - Le Projet n'est plus compilable !
+
+[ADDITION] - 25/11/2021 : Modification des différentes fonctions du main pour prendre en charge la structure ressources_t.
+[ADDITION] - 25/11/2021 : Ajout du chargement des textures du jeu.
+
+[INFO] - Le Projet peut à nouveau être compilé !
+
+[ADDITION] - 30/11/2021 : Ajout de l'affichage du background.
+
+[ADDITION] - 02/12/2021 : Modification du main.c pour que le background soit affiché.
+[ADDITION] - 02/12/2021 : Changement de la fenêtre de chargement, et suppression d'image de background inutile.
+[ADDITION] - 02/12/2021 : Modification de gestionEvenements.c/.h pour prendre en charge les événements claviers. (le main a été modifié en conséquence).
+
+[ADDITION] - 15/12/2021 : Ajout de gestionSon.c et .h pour prendre en charge les sons (les deux sont vides au moment de l'écriture de cette ligne).
+[ADDITION] - 15/12/2021 : Ajout d'un dossier son ainsi que de divers sons.
+
+[ADDITION] - 17/12/2021 : Ajout d'une structure level pour la gestion des niveau du jeu et dés écrans intermédiaires tels que l'écran titre et l'écran de fin.
+[ADDITION] - 17/12/2021 : Ajout d'une constante NB_PLATFORMS_MAX indiquant le nombre maximum de plateforme dans un niveau.
+[ADDITION] - 17/12/2021 : Ajout d'une constante NB_LEVEL indiquant le nombre de niveaux implémentés.
+[ADDITION] - 17/12/2021 : Retrait des constantes true/false.
+
+[INFO] - Le Projet n'est plus compilable !
+
+[BUG] - Le projet ne se compile plus suite à un problème de reconnaissance des types abstraits world et ressources dans gestionAffichage.c/.h .
+
+[ADDITION] - 20/12/2021 : Correction de quelques documentations.
+
+[BUG] - le bug de compilation a été corrigé.
+
+[INFO] - Le Projet peut à nouveau être compilé !
+
+[ADDITION] - 21/12/2021 : Modification de handleEvents pour prendre en charge les déplacements du joueur.
+[ADDITION] - 21/12/2021 : Modification de gestionDonnees pour implémenter les déplacements gauche/droite du joueur.
+[ADDITION] - 21/12/2021 : Ajout d'une constante PAS_DEPLACEMENT indiquant le pas de déplacement des sprites du jeu.
+[ADDITION] - 21/12/2021 : Ajout de l'affichage des Sprites.
+
+[ADDITION] - 22/12/2021 : Ajout du menu principal du jeu.
+[ADDITION] - 22/12/2021 : Passage des images background de 1080p à 720p.
+[ADDITION] - 22/12/2021 : Ajout des fichiers sdl2-ttf-light.c/.h pour prise en charge de l'affichage des polices d'écriture du jeu.
+[ADDITION] - 22/12/2021 : Création d'un dossier Polices pour y stocker les polices d'écriture du jeu.
+
+[ADDITION] - 23/12/2021 : Ajout des labels des menus.
+[ADDITION] - 23/12/2021 : Modification de la structure world pour prendre en charge la gestion des menus et niveaux.
+[ADDITION] - 23/12/2021 : Ajout de constantes : MENU_STATE, LEVEL_STATE.
+[ADDITION] - 23/12/2021 : Ajout d'un dossier pour stocker les labels.
+[ADDITION] - 23/12/2021 : Modification des structures du jeu pour implémenter les animations et d'autres fonctionnalités.
+[ADDITION] - 23/12/2021 : Ajout de constantes : NB_FRAME_PLAYER_STANDING, NB_FRAME_PLAYER_MOVING, NB_FRAME_PLAYER_JUMPING, NB_FRAME_PLAYER_ATTACKING, NB_FRAME_BACKGROUND.
+[ADDITION] - 23/12/2021 : Suppression de textures inutilisées.
+
+[ADDITION] - 23/12/2021 : Ajout des dernières textures des labels.
+[ADDITION] - 23/12/2021 : Ajout de la gestion de l'affichage du menu.
+
+[ADDITION] - 24/12/2021 : Ajout de l'affichage des labels dans le menu.
+
+[ADDITION] - 27/12/2021 : Ajout de la gestion de l'animation du texte des menus (hovering).
+[ADDITION] - 27/12/2021 : Ajout des package SDL_sound et SDL_Mixer.
+[ADDITION] - 27/12/2021 : Modification de CMakeLists.txt pour rendre le projet compilable même si l'utilisateur n'a pas SDL2.
+[ADDITION] - 27/12/2021 : Ajout des dossiers Musique et SoundEffect.
+[ADDITION] - 27/12/2021 : Modification de gestionSon.c, main.c et constante.h.
+
+[ADDITION] - 27/12/2021 : Ajout de l'affichage du titre du jeu dans le menu Principal.
+
+[ADDITION] - 28/12/2021 : Ajout des fonctionnalités du bouton Play du menu Principal.
+[ADDITION] - 28/12/2021 : Ajout des fonctionnalités du bouton Help du menu Principal.
+[ADDITION] - 28/12/2021 : Ajout des fonctionnalités du bouton Score du menu Principal.
+[ADDITION] - 28/12/2021 : Ajout des fonctionnalités du bouton Exit du menu Principal.
+[ADDITION] - 28/12/2021 : Ajout de la constante de gravité.
+[ADDITION] - 28/12/2021 : Ajout d'une constante pour jouer ou non la musique
+[ADDITION] - 28/12/2021 : Bidouillage dans gestionSon.c pour que la musique se joue.
+[ADDITION] - 28/12/2021 : Ajout d'une animation dans le menu.
+[ADDITION] - 28/12/2021 : Passage des effets sonores de .mp3 en .ogg .
+[ADDITION] - 28/12/2021 : Rajout des sprites faisant face à gauche.
+
+[ADDITION] - 29/12/2021 : Ajout des constantes permettant de déterminer l'orientation vers laquelle le Sprite pointe.
+[ADDITION] - 29/12/2021 : Ajout de la gestion de sortie de l'écran du Player.
+[ADDITION] - 29/12/2021 : Modification de la fonction musics afin de permettre la lecture des musiques appropriées aux Niveaux/Menus.
+[ADDITION] - 29/12/2021 : Ajout d'une constante ANIMATION_TIMERATE, permettant de définir le temps en ms d'affichage d'une frame lors d'une animation.
+[ADDITION] - 29/12/2021 : Ajout des soundEffects.
+[ADDITION] - 29/12/2021 : Ajout de tout les tests setter de struct_sprite.h à faire dans testSprite.c .
+[ADDITION] - 29/12/2021 : Complétion de gestionSon.h .
+[ADDITION] - 29/12/2021 : Ajout d'un fichier testSon à compléter dans 3tests.
+[ADDITION] - 29/12/2021 : Ajout de la constante BOSS_STATE et implémentation dans le void musics.
+
+[BUG] - Si aucune des touches directionnelles n'est appuyée mais qu'une touche quelconque du clavier l'est, le sprite continue de faire l'animation précédente.
+
+[ADDITION] - 29/12/2021 : Ajout du changement de musique par niveau.
+[ADDITION] - 29/12/2021 : Ajout d'une constante permettant de jouer ou non les effets sonores.
+
+[ADDITION] - 30/12/2021 : Ajout d'un tableau de Sprites destiné à contenir les mobs des niveaux.
+
+[BUG] - Lors du maintien d'une touche directionnelle, il y a un léger délai avant que le sprite continue d'avancer tant que la touche est maintenue.
+
+[ADDITION] - 30/12/2021 : Complétion de quelques documentations.
+[ADDITION] - 30/12/2021 : Ajout du chargement et stockage des textures des mobs.
+[ADDITION] - 30/12/2021 : Ajout d'une constante NB_FRAME_CROCO_WALKING permettant de définit le nombre de frames de l'animation de marche du croco.
+[ADDITION] - 30/12/2021 : Ajout d'une constante PAUSE_STATE permettant d'afficher le menu de pause.
+[ADDITION] - 30/12/2021 : Ajout du menu de pause.
+[ADDITION] - 30/12/2021 : Résolution du décalage du son.
+[ADDITION] - 30/12/2021 : Ajout des sounds effect walk et swing + diminution du volume sonore des sounds effect.
+[ADDITION] - 30/12/2021 : Ajout de 3 niveaux.
+[ADDITION] - 30/12/2021 : Amélioration des sound Effects.
+
+[BUG] - Fuite conséquente de mémoire corrigée. Les textures de SDL2-TTF n'étaient pas nettoyées dans apply_text(). La fuite de mémoire était de l'ordre des (100 Mo/s).
+
+[ADDITION] - 31/12/2021 : Retrait des frames.
+[ADDITION] - 31/12/2021 : Ajout des levels.
+[ADDITION] - 31/12/2021 : Correction de la doc
+[ADDITION] - 31/12/2021 : Ajout des fichiers struct_list.c/.h pour implémenter les listes au projet.
+[ADDITION] - 31/12/2021 : Passage de la représentation mémoire des levels de Tableaux à liste.
+[ADDITION] - 31/12/2021 : Correction et finalisation du parsing des levels.
+[ADDITION] - 31/12/2021 : Correction des sprites player (pas tous, playerisattacking).
+[ADDITION] - 31/12/2021 : Ajout du traitement des levels pour les fichiers dont l'extension est ".level" uniquement.
+
+[ADDITION] - 01/01/2022 : Passage des listes en listes doublement chaînées.
+[ADDITION] - 01/01/2022 : Ajout d'une fonction copyLevel permettant de copier les informations d'un niveau.
+[ADDITION] - 01/01/2022 : Ajout de deux constantes préprocesseur BOSS_LEVEL et CLASSIC_LEVEL utiles au parsing des niveaux.
+
+[ADDITION] - 02/01/2022 : Retrait des constantes préprocesseur relatives à l'idée de l'implémentation d'un combat contre un Boss et abandon de l'idée.
+[ADDITION] - 02/01/2022 : Fin de la gestion de l'enregistrement des levels.
+[ADDITION] - 02/01/2022 : Passage de la gestion des mouvements des sprites de modifcation directe des coordonnées.
+
+[BUG] - Le délai avant prise en compte du déplacement du Player a été corrigé.
+[BUG] - Le maintien d'une touche différente de celles utilisées pour prendre en compte les actions du joueur ne fait plus conserver au sprite sa dernière frame et position.
+
+[ADDITION] - 03/01/2022 : Ajout du tableau de score (core dumped...).
+[ADDITION] - 03/01/2022 : Ajout du saut du joueur.
+
+[BUG] - Si la touche de saut est spammée/ maintenue, le sprite continuera de jump en dehors de l'écran.
+
+[ADDITION] - 03/01/2022 : Ajout des scores terminé.
+[ADDITION] - 03/01/2022 : Ajout de Death State.
+[ADDITION] - 03/01/2022 : Suppression des Champs, Fonctions et constantes devenus inutiles.
+
+[BUG] - Le Sprite ne jump plus en dehors de l'écran si la touche est spammée/ maintenue.
+[BUG] - Le sprite peut maintenant se déplacer ET sauter si les deux touches sont maintenues.
+
+[ADDITION] - 04/01/2022 : L'animation d'attaque est désormais fonctionnelle.
+[ADDITION] - 04/01/2022 : Update doc.
+[ADDITION] - 04/01/2022 : Ajout du parsing des levels.
+[ADDITION] - 04/01/2022 : Ajout de l'affichage des platefomes.
+
+[BUG] - L'affichage des plateformes crée un core dumped lorsque l'on récupère la tête de la liste du champ world->levels.
+
+//-----------------LATE STATE------------------------//
+
+The project is not finished by now, but it will ! (we promise ;p)
