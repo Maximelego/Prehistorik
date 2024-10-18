@@ -29,13 +29,13 @@
 /**
   * \brief Valeur permettant de jouer ou non les sons. (défaut à 1)
   */
-#define PLAY_SOUNDS 0
+#define PLAY_SOUNDS 1
 
 //---------------------------------------------------------//
 /**
   * \brief Valeur permettant de régler le volume. (défaut à 20)
   */
-#define VOLUME 0
+#define VOLUME 20
 
 //---------------------------------------------------------//
 /**

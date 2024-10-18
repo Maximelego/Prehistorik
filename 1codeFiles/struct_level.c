@@ -132,7 +132,6 @@ int parseLevelForm(level_p level, FILE* file){
       }
     int ret = sscanf(line,"%c %d %d %d",&c,&x,&y,&z);
     i++;
-	printf("currentLine : %d %d \n", i, ret);
   }
 
 
